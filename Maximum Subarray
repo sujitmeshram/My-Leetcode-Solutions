@@ -1,0 +1,28 @@
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int max_far=Integer.MIN_VALUE;
+        int max_now=0;
+        if(nums.length==1){
+            return nums[0];
+        }
+        
+        for(int i=0;i<nums.length;i++){
+            
+            max_now=max_now+nums[i];
+            
+            if(max_now>max_far){
+                max_far=max_now;
+                
+            }
+            if(max_now<0){
+                max_now=0;
+            }
+            
+            
+            
+        }
+        return max_far;
+        
+        
+    }
+}
